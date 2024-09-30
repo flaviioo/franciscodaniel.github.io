@@ -1,0 +1,46 @@
+/* Exemplo de transição com prefixos */
+* {
+    /* ... */
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    /* ... */
+}
+
+/* Flexbox com prefixos no header */
+header {
+    /* ... */
+    display: -webkit-box;
+    /* antigo */
+    display: -ms-flexbox;
+    /* IE 10 */
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    /* ... */
+}
+
+/* Exemplo de fallback para variáveis CSS */
+.title-section {
+    position: relative;
+    font-size: 1.2rem;
+    color: #6c757d;
+    /* Fallback para var(--bs-gray-700) */
+    /* ... */
+    color: var(--bs-gray-700);
+}
+
+/* Exemplo de gradiente com fallback */
+.background-gradient {
+    background: #007bff;
+    /* Fallback */
+    background: -webkit-linear-gradient(to right, #007bff, #00c6ff);
+    /* Safari 5.1 - 6.0 */
+    background: linear-gradient(to right, #007bff, #00c6ff);
+    /* Padrão */
+}

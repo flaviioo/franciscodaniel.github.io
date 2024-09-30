@@ -1,0 +1,879 @@
+@import url('./allweb.css');
+@import url('./dark-mode.css');
+@import url('./spinner.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    box-sizing: border-box;
+    /* transition: .2s linear; */
+    user-select: none;
+    text-decoration: none !important;
+    list-style-type: none;
+    background-color: transparent;
+}
+
+/* Prefixos para compatibilidade com Webkit */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    /* Propriedades específicas para Webkit */
+}
+
+#app {
+    max-width: 1900px;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Estilo para o título Serviços */
+.title-section {
+    position: relative;
+    font-size: 1.2rem;
+    color: var(--bs-gray-700);
+    margin-bottom: 20px;
+    font-weight: 700;
+    display: flex;
+    text-transform: uppercase;
+}
+
+/* Pseudo-classe para adicionar um elemento decorativo após o título */
+.title-section::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 3px;
+    background-color: #007bff;
+    border-radius: 2px;
+}
+
+/* Estilo para o título Serviços */
+.title-section-white {
+    position: relative;
+    font-size: 1.2rem;
+    color: var(--bs-white);
+    margin-bottom: 20px;
+    font-weight: 700;
+    display: flex;
+    text-transform: uppercase;
+}
+
+/* Pseudo-classe para adicionar um elemento decorativo após o título */
+.title-section-white::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    width: 60px;
+    height: 3px;
+    background-color: var(--bs-white);
+    border-radius: 2px;
+}
+
+.subtitle-section {
+    margin: 40px 0 20px;
+    text-align: left;
+    font-size: 2.5rem;
+    line-height: 1;
+    font-weight: bold;
+    color: var(--bs-gray-700);
+}
+
+header {
+    position: relative;
+    padding: 0 7%;
+    width: 100%;
+    height: 12vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+    background-color: #007bff;
+
+    & .logo {
+
+        & a {
+            color: var(--bs-white);
+            font-size: 30px;
+            font-weight: 800;
+        }
+    }
+
+    & .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        & .btn-mode {
+            margin-right: 10px;
+            border: none;
+            z-index: 4;
+
+            & i {
+                font-size: 32px;
+                cursor: pointer;
+                color: var(--bs-white);
+            }
+        }
+
+        & button {
+            border: none;
+            z-index: 4;
+
+            & i {
+                font-size: 32px;
+                cursor: pointer;
+                color: var(--bs-white);
+            }
+        }
+
+        nav {
+            padding-top: 5rem;
+            position: fixed;
+            top: 0;
+            left: -100%;
+            opacity: 0;
+            width: 100vw;
+            height: 100%;
+            display: flex;
+            flex-direction: column-reverse;
+            background-color: var(--bs-white);
+            transition: 0.3s ease-in-out;
+
+            ul {
+                width: 100%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+
+                & li {
+                    padding: 2px 0;
+
+                    & a {
+                        font-size: 50px;
+                        color: var(--bs-gray-700);
+                        font-weight: bold;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            & .cards {
+                display: none;
+            }
+
+        }
+    }
+}
+
+.active-menu {
+    left: 0 !important;
+    opacity: 1 !important;
+    transition: 0.3s ease-in-out;
+}
+
+.active {
+    color: #007bff !important;
+}
+
+nav ul li a:hover {
+    color: #007bff !important;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+main {
+
+    #banner {
+        padding: 30px 0;
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #007bff;
+
+        /* Estilo para o contêiner do Swiper */
+        .swiper {
+            padding: 0 7%;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Estilo para os slides */
+        .swiper-slide {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            color: var(--bs-white);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            /* Ajuste a cor de fundo conforme necessário */
+        }
+
+        p {
+            font-size: 4rem;
+            line-height: 1.1;
+            font-weight: 800;
+        }
+    }
+
+    & #sobre {
+        padding: 40px 7%;
+        width: 100%;
+
+        & .apresentacao {
+            width: 100%;
+
+            & .minhas-infos {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+
+                & .descricao {
+                    width: 100%;
+                    height: 100%;
+
+                    & .my-name,
+                    & .description {
+                        color: #666666;
+                    }
+
+                    & .my-name {
+                        color: #007bff;
+                        font-weight: bold;
+                    }
+                }
+
+                & .meus-dados {
+
+                    & p {
+                        color: #007bff;
+                        font-weight: 700;
+                        border-bottom: 1px solid var(--bs-gray-300);
+
+                        & span {
+                            color: #666666;
+                            font-weight: 400;
+                        }
+                    }
+                }
+            }
+        }
+
+        & .meu-link {
+            margin-top: 30px;
+
+            & a {
+                padding: 13px;
+                color: var(--bs-white);
+                border-radius: 4px;
+                font-weight: 500;
+                background-color: #007bff;
+            }
+        }
+    }
+
+    /* Estilo geral do contêiner de serviços */
+    #servicos {
+        padding: 80px 7%;
+        text-align: center;
+        background-color: var(--bs-gray-100);
+
+        .cards {
+            margin-top: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+
+            /* Estilo do cartão */
+            .card-s {
+                background-color: var(--bs-white);
+                /* border-radius: 8px; */
+                box-shadow: 0 0px 2px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                width: 100%;
+                text-align: center;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                cursor: pointer;
+
+                i {
+                    font-size: 2rem;
+                    color: #007bff;
+                    margin-bottom: 10px;
+                }
+
+                h6 {
+
+                    font-size: 1.25rem;
+                    color: var(--bs-gray-700);
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    font-weight: 600;
+                }
+
+                p {
+                    font-size: 0.875rem;
+                    color: #666666;
+                    margin: 0;
+                    line-height: 1.5;
+                }
+            }
+
+            .card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            }
+
+            .card:nth-child(odd) {
+                background: #f4f4f4;
+            }
+
+            .card:nth-child(even) {
+                background-color: var(--bs-white);
+            }
+        }
+    }
+
+
+    /* Estilo geral do contêiner de serviços */
+    #portfolio {
+        padding: 80px 7%;
+        text-align: center;
+
+        .cards {
+            margin-top: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+
+            /* Estilo do cartão */
+            .card-portfolio {
+                position: relative;
+                background-color: var(--bs-white);
+                width: 100%;
+                text-align: center;
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                cursor: pointer;
+                border-radius: 6px;
+                overflow: hidden;
+
+                .imagem {
+                    width: 100%;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                .content-nome-projeto {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: rgba(0, 0, 0, 0.5);
+
+                    a,
+                    span {
+                        color: var(--bs-white);
+                    }
+
+                    & a {
+                        font-weight: 600;
+                    }
+
+                    & span {
+                        margin-top: 5px;
+                    }
+                }
+            }
+
+            & .soon {
+                color: #666666;
+                background-color: red;
+            }
+        }
+    }
+
+    #team {
+        padding: 75px 7%;
+        width: 100vw;
+        text-align: center;
+        background-color: #007bff;
+        /* Cor de fundo clara para um contraste melhor */
+
+        .box-team {
+            margin: 30px 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease;
+            /* Adiciona uma animação suave */
+
+            &:hover {
+                transform: scale(1.02);
+                /* Leve aumento ao passar o mouse */
+            }
+
+            .imagem {
+                /* Ajuste o padding para melhor proporção */
+                max-width: 200px;
+                width: 100%;
+                height: 200px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 100%;
+                overflow: hidden;
+                background-color: #ffffff;
+                /* Fundo branco para destacar a imagem */
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+                /* Adiciona uma sombra para profundidade */
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    cursor: pointer;
+                    /* Ajusta a imagem para cobrir o contêiner */
+                }
+            }
+
+            .texto-team {
+                margin: 20px 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                .team-title {
+                    /* Aumenta o tamanho da fonte */
+                    text-align: left;
+                    font-size: 2rem;
+                    line-height: 1.2;
+                    font-weight: 800;
+                    color: var(--bs-white);
+                    /* Cor mais escura para melhor legibilidade */
+                }
+
+                .team-cargo {
+                    text-align: left;
+                    margin-top: 1px;
+                    color: var(--bs-white);
+                }
+
+                .team-role {
+                    margin-top: 10px;
+                    text-align: left;
+                    color: var(--bs-white);
+                    /* Ajusta o espaçamento das letras */
+                }
+
+                .team-role::before {
+                    content: "";
+                    display: flex;
+                    margin: 10px 0;
+                    width: 60px;
+                    height: 3px;
+                    background-color: var(--bs-white);
+                    border-radius: 2px;
+
+                }
+            }
+        }
+    }
+
+}
+
+
+
+/* Estilo geral do rodapé */
+footer {
+    position: relative;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+
+
+    .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+
+    }
+
+    .footer-info {
+        margin-bottom: 20px;
+    }
+
+    .footer-info p {
+        margin: 0;
+        font-size: 0.875rem;
+    }
+
+    .social-links {
+        margin-top: 10px;
+    }
+
+    .social-links a {
+        color: #fff;
+        font-size: 1.5rem;
+        margin: 0 10px;
+        text-decoration: none;
+    }
+
+    .social-links a:hover {
+        color: #007bff;
+    }
+
+    .request-quote a {
+        display: inline-block;
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 600;
+        margin-bottom: 20px;
+    }
+
+    .request-quote a:hover {
+        background-color: #0056b3;
+    }
+
+    .contact-info p {
+        margin: 5px 0;
+        font-size: 0.875rem;
+    }
+
+    .contact-info a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    .contact-info a:hover {
+        text-decoration: underline;
+    }
+}
+
+@media(min-width: 768px) {
+    #banner {
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #007bff;
+
+        /* Estilo para os slides */
+        .swiper-slide {
+            text-align: center;
+        }
+    }
+
+    & #sobre {
+        & .apresentacao {
+
+            & .texto {
+                width: 100%;
+                text-align: start;
+            }
+
+            & .imagem {
+                width: 100%;
+
+                & img {
+                    width: 80% !important;
+                }
+            }
+        }
+    }
+
+    /* Estilo geral do contêiner de serviços */
+    #servicos {
+
+        .cards {
+
+            /* Estilo do cartão */
+            .card-s {
+                width: 48% !important;
+            }
+        }
+    }
+
+    /* Estilo geral do contêiner de serviços */
+    #portfolio {
+
+        .cards {
+
+            /* Estilo do cartão */
+            .card-portfolio {
+                width: 48% !important;
+            }
+        }
+    }
+}
+
+
+@media(min-width: 960px) {
+    header {
+        padding: 50px 10%;
+
+        & .menu {
+            & .btn-open {
+                margin-right: 0;
+            }
+
+            nav {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100vw;
+                height: 100%;
+                padding: 30px 0;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                background-color: var(--bs-white);
+
+                ul {
+                    padding: 40px 80px;
+                    width: 30%;
+                    justify-content: center;
+
+                    & li {
+                        padding: 4px 0;
+
+                        & a {
+                            font-size: 35px;
+                            color: var(--bs-gray-700);
+                            text-decoration: none;
+                        }
+
+
+                    }
+                }
+
+                .cards {
+                    padding: 60px 0;
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    gap: 10px;
+                    overflow: auto;
+
+                    /* Estilo do cartão */
+                    .card-s {
+                        padding: 20px;
+                        max-width: 350px;
+                        width: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        text-align: center;
+                        transition: transform 0.3s ease, box-shadow 0.3s ease;
+                        cursor: pointer;
+                        background: var(--bs-white);
+                        border: 1px solid var(--bs-gray-300);
+
+                        i {
+                            font-size: 2rem;
+                            color: #007bff;
+                            margin-bottom: 10px;
+                        }
+
+                        h6 {
+
+                            font-size: 1rem;
+                            color: #333333;
+                            margin-top: 10px;
+                            margin-bottom: 10px;
+                            font-weight: 600;
+                        }
+
+                        p {
+                            font-size: 0.800rem;
+                            color: #666666;
+                            margin: 0;
+                            line-height: 1.5;
+                        }
+                    }
+
+                    .card:hover {
+                        transform: translateY(-10px);
+                        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+                    }
+
+                    .card:nth-child(odd) {
+                        background: #f4f4f4;
+                    }
+
+                    .card:nth-child(even) {
+                        background-color: var(--bs-white);
+                    }
+                }
+
+                .btn-close-menu {
+                    padding: 0;
+                    padding-top: 0;
+                    padding-right: 40px;
+                    width: 10%;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: flex-start;
+
+                    button {
+                        padding: 0;
+                        cursor: pointer;
+
+                        & i {
+                            font-size: 35px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    main {
+        #banner {
+
+            /* Estilo para os slides */
+            .swiper-slide {
+                align-items: center;
+            }
+        }
+
+        & #sobre {
+            padding: 100px 10%;
+            width: 100%;
+
+            & .apresentacao {
+                width: 100%;
+
+                & .minhas-infos {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+
+                    & .meus-dados {
+                        width: 60%;
+                        padding-left: 30px;
+                    }
+                }
+            }
+        }
+
+        #servicos {
+            padding: 100px 10%;
+
+            .cards {
+
+                /* Estilo do cartão */
+                .card-s {
+                    width: 48% !important;
+                }
+            }
+        }
+
+        /* Estilo geral do contêiner de serviços */
+        #portfolio {
+            padding: 100px 10%;
+
+            .cards {
+
+                /* Estilo do cartão */
+                .card-portfolio {
+                    width: 48% !important;
+                }
+            }
+        }
+
+        #team {
+            padding: 70px 20%;
+
+            .box-team {
+                margin: 30px 0;
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+
+                .texto-team {
+                    margin-left: 20px;
+                    margin: 0;
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 1024px) {
+
+    main {
+        #servicos {
+            .cards {
+                display: grid;
+                grid-template-columns: repeat(3, 2fr);
+
+                /* Estilo do cartão */
+                .card-s {
+                    width: 100% !important;
+                }
+            }
+        }
+
+        /* Estilo geral do contêiner de serviços */
+        #portfolio {
+            padding: 100px 10%;
+
+            .cards {
+                display: grid;
+                grid-template-columns: repeat(3, 2fr);
+
+                /* Estilo do cartão */
+                .card-portfolio {
+                    width: 100% !important;
+                }
+            }
+        }
+
+        #team {
+            padding: 70px 15%;
+
+            .box-team {
+                .texto-team {
+                    width: 70%;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Francisco Daniel - Desenvolvimento Web e Soluções Criativas</title>
+
+    <!-- Meta Description -->
+    <meta name="description"
+        content="Francisco Daniel oferece soluções criativas e eficazes em desenvolvimento web, programação e design para empresas e startups que buscam crescimento e inovação.">
+    <!-- Meta Keywords -->
+    <meta name="keywords"
+        content="Francisco Daniel, Desenvolvimento Web, Programação, Soluções Criativas, Startups, Design Web, Crescimento Empresarial">
+    <!-- Author -->
+    <meta name="author" content="Francisco Daniel">
+    <!-- Open Graph Meta Tags (para redes sociais) -->
+    <meta property="og:title" content="Francisco Daniel - Desenvolvimento Web e Soluções Criativas">
+    <meta property="og:description"
+        content="Ajudando empresas e startups a crescerem com soluções inovadoras em desenvolvimento web e design.">
+    <meta property="og:image" content="https://www.linkedin.com/in/francisco-daniel-38b097296/">
+    <meta property="og:url" content="https://www.seuwebsite.com">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" href="./public/my.jpg" type="image/x-icon">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="./src/assets/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body :class="{ 'dark-mode': isDarkMode }">
+    <div id="app">
+        <spinner v-if="spinnerTime"></spinner>
+        <header>
+            <div class="logo">
+                <a href="index.html">fd</a>
+            </div>
+            <div class="menu">
+                <button class="btn-mode" @click="toggleDarkMode">
+                    <i :class="isDarkMode ? 'bi bi-brightness-low-fill' : ' bi bi-brightness-low'"></i>
+                </button>
+                <button class="btn-open" @click="showMenu"><i :class=" isMenu ? 'bi bi-x' : 'bi bi-list '"></i></button>
+                <nav :class="isMenu ? 'active-menu' : 'nav'">
+                    <ul>
+                        <li>
+                            <a @click="showMenu" class="active" href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a @click="showMenu" href="#sobre">Sobre</a>
+                        </li>
+                        <li>
+                            <a @click="showMenu" href="#servicos">Serviços</a>
+                        </li>
+                        <li>
+                            <a @click="showMenu" href="#contactos">Contactos</a>
+                        </li>
+                    </ul>
+                    <div class="cards">
+                        <div class="card-s">
+                            <i class="bi bi-diagram-2"></i>
+                            <h6>Desenvolvimento de Sites</h6>
+                            <p>Criação de sites personalizados e responsivos para startups e pequenas e médias
+                                empresas.</p>
+                            <p>Desenvolvimento de sites institucionais, portfólios e blogs.</p>
+                        </div>
+                        <div class="card-s">
+                            <i class="bi bi-code-slash"></i>
+                            <h6>Desenvolvimento de Softwares</h6>
+                            <p>Desenvolvemos soluções personalizadas de software que atendem às necessidades específicas
+                                de cada cliente.</p>
+                        </div>
+                        <div class="card-s">
+                            <i class="bi bi-bezier2"></i>
+                            <h6>Design de Identidade Gráfica</h6>
+                            <p>Criação de logotipos e identidade visual.</p>
+                            <p>Desenvolvimento de materiais gráficos, como cartões de visita, papelaria e banners.</p>
+                        </div>
+                        <div class="card-s">
+                            <i class="bi bi-bag-check"></i>
+                            <h6>Sites Gerenciáveis</h6>
+                            <p>Soluções que permitem a fácil gestão e atualização de conteúdo.</p>
+                            <p>Desenvolvimento de sites institucionais, portfólios e blogs com autonomia para o usuário.
+                            </p>
+                        </div>
+                        <div class="card-s">
+                            <i class="bi bi-diagram-2"></i>
+                            <h6>Desenvolvimento de Interfaces</h6>
+                            <p>Design de interfaces intuitivas e atraentes que priorizam a experiência do usuário.</p>
+                            <p>Foco em usabilidade e estética para criar sites modernos e funcionais.</p>
+                        </div>
+                        <div class="card-s">
+                            <i class="bi bi-gear"></i>
+                            <h6>Consultoria e Suporte</h6>
+                            <p>Manutenção contínua e atualizações para garantir o desempenho ideal do seu site.</p>
+                            <p>Suporte técnico especializado para resolver problemas e implementar melhorias.</p>
+                        </div>
+                    </div>
+
+                    <!-- <div class="btn-close-menu">
+                        <button @click="showMenu"><i class="bi bi-x"></i></button>
+                    </div> -->
+
+                </nav>
+            </div>
+        </header>
+        <div id="particles-js"></div>
+        <main>
+            <div id="banner">
+                <!-- Slider main container -->
+                <div class="swiper">
+                    <!-- Additional required wrapper -->
+                    <div class="swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="swiper-slide">
+                            <p>O seu projecto é meu próximo desafio.</p>
+                            <!-- <a href="">Pedir orçamento</a> -->
+                        </div>
+                        <div class="swiper-slide">
+                            <p>Sua Jornada Digital Começa Aqui.</p>
+                            <!-- <a href="">Pedir orçamento</a> -->
+                        </div>
+                        <div class="swiper-slide">
+                            <p>Vamos Construí-la Juntos.</p>
+                            <!-- <a href="">Pedir orçamento</a> -->
+                        </div>
+                    </div>
+                    <!-- If we need pagination -->
+                </div>
+                <!-- <div class="swiper-pagination"></div> -->
+            </div>
+
+            <div id="sobre">
+                <h2 class="title-section" data-aos="fade-right">Sobre</h2>
+                <p class="subtitle-section" data-aos="fade-top">saiba quem sou.</p>
+                <div class="apresentacao">
+                    <div class="minhas-infos">
+                        <div class="descricao" data-aos="fade-right">
+                            <p class="description">Eu sou<span class="my-name"> Francisco Daniel</span>, um
+                                desenvolvedor web.</p>
+                            <p class="description">
+                                Meu maior objetivo é transformar ideias em soluções
+                                digitais
+                                que façam a diferença. Com experiência em algumas ferramentas, estou sempre em busca de
+                                novos desafios para aprimorar minhas habilidades
+                            </p>
+                            <p class="description">
+                                Acredito que a tecnologia tem o poder de transformar o cotidiano das pessoas, e minha
+                                missão é
+                                contribuir com projetos que impulsionem essa mudança.
+                            </p>
+                        </div>
+                        <div class="meus-dados" data-aos="fade-right">
+                            <p>Nome:<br><span> Francisco Daniel</span></p>
+                            <p>Email:<br><span>flaviodosanjosdaniel@gmail.com</span></p>
+                            <p>De:<br><span>Luanda, Angola</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meu-link" data-aos="fade-right">
+                    <a class="mywhatsapp" href="https://wa.me/244937541138?text=Olá, gostaria de mais informações!"
+                        target="_blank">Enviar via WhatsApp</a>
+                </div>
+            </div>
+
+            <div id="servicos">
+                <h2 class="title-section" data-aos="fade-right">O que eu faço</h2>
+                <p class="subtitle-section" data-aos="fade-top">como posso ajudar?</p>
+                <div class="cards">
+                    <div class="card-s" data-aos="fade-right">
+                        <i class="bi bi-diagram-2"></i>
+                        <h6>Desenvolvimento de Sites</h6>
+                        <p>Criação de sites personalizados e responsivos para startups e pequenas e médias empresas.</p>
+                        <p>Desenvolvimento de sites institucionais, portfólios e blogs.</p>
+                    </div>
+                    <div class="card-s" data-aos="fade-left">
+                        <i class="bi bi-code-slash"></i>
+                        <h6>Desenvolvimento de Softwares</h6>
+                        <p>Desenvolvemos soluções personalizadas de software que atendem às necessidades específicas
+                            de cada cliente.</p>
+                    </div>
+                    <div class="card-s" data-aos="fade-left">
+                        <i class="bi bi-bezier2"></i>
+                        <h6>Design de Identidade Gráfica</h6>
+                        <p>Criação de logotipos e identidade visual.</p>
+                        <p>Desenvolvimento de materiais gráficos, como cartões de visita, papelaria e banners.</p>
+                    </div>
+                    <div class="card-s" data-aos="fade-right">
+                        <i class="bi bi-bag-check"></i>
+                        <h6>Sites Gerenciáveis</h6>
+                        <p>Soluções que permitem a fácil gestão e atualização de conteúdo.</p>
+                        <p>Desenvolvimento de sites institucionais, portfólios e blogs com autonomia para o usuário.</p>
+                    </div>
+                    <div class="card-s" data-aos="fade-right">
+                        <i class="bi bi-diagram-2"></i>
+                        <h6>Desenvolvimento de Interfaces</h6>
+                        <p>Design de interfaces intuitivas e atraentes que priorizam a experiência do usuário.</p>
+                        <p>Foco em usabilidade e estética para criar sites modernos e funcionais.</p>
+                    </div>
+
+                    <div class="card-s" data-aos="fade-left">
+                        <i class="bi bi-gear"></i>
+                        <h6>Consultoria e Suporte</h6>
+                        <p>Manutenção contínua e atualizações para garantir o desempenho ideal do seu site.</p>
+                        <p>Suporte técnico especializado para resolver problemas e implementar melhorias.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="portfolio" v-if="portifolio">
+                <h2 class="title-section" data-aos="fade-right">Portfólio</h2>
+                <p class="subtitle-section" data-aos="fade-top">meus trabalhos.</p>
+                <div class="cards" v-if="showContentProject.lenght > 0">
+                    <div @mouseover="overContentProject" class="card-portfolio" data-aos="fade-left">
+                        <div class="imagem">
+                            <img src="./public/Captura de Ecrã (237).png" alt="">
+                        </div>
+                        <div class="content-nome-projeto" v-if="showContentProject">
+                            <a href="">Teste </a>
+                            <span>Sistema Web</span>
+                        </div>
+                    </div>
+                    <div @mouseover="overContentProject" class="card-portfolio" data-aos="fade-left">
+                        <div class="imagem">
+                            <img src="./public/Captura de Ecrã (237).png" alt="">
+                        </div>
+                        <div class="content-nome-projeto">
+                            <a href="">Teste </a>
+                            <span>Sistema Web</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="team">
+                <div class="box-team">
+                    <div class="section-image">
+                        <div class="imagem">
+                            <img src="./public/my.jpg" alt="Francisco Daniel">
+                        </div>
+                    </div>
+                    <div class="texto-team">
+                        <span class="team-title">
+                            Interessado? <br> Vamos conversar!
+                        </span>
+                        <span class="team-role">
+                            Eu ajudo empresas e startups a crescerem através de soluções web criativas e eficazes.
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div id="contactos" class="footer-content">
+                <div class="footer-info">
+                    <p>© {{ano}} Francisco Daniel </p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/flaviodaniel0/" aria-label="Facebook"><i
+                                class="bi bi-facebook"></i></a>
+                        <a href="https://www.instagram.com/iamflaviodaniel/" aria-label="Instagram"><i
+                                class="bi bi-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/francisco-daniel-38b097296/?originalSubdomain=ao"
+                            aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="https://x.com/FlvioDaniel13" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+                        <a href="https://github.com/flaviioo" aria-label="GitHub"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+                <div class="request-quote">
+                    <a href="https://wa.me/244937541138?text=Olá, gostaria de um orçamento!" target="_blank">Peça
+                        já seu orçamento</a>
+                </div>
+                <div class="contact-info">
+                    <p><a href="mailto:flaviodosanjosdaniel@gmail.com">flaviodosanjosdaniel@gmail.com</a></p>
+                    <p><a href="tel:+244937541138">+244 937 541 138</a></p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vuex@4.0.0/dist/vuex.global.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./src/js/particles.min.js"></script>
+    <script type="module" src="./src/js/app.js"></script>
+</body>
+
+</html>

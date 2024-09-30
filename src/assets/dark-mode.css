@@ -1,0 +1,79 @@
+.dark-mode {
+    /* Adicione estilos para o modo dark aqui */
+    background-color: var(--bs-dark) !important;
+
+
+    p,
+    h2,
+    a,
+    span {
+        color: var(--bs-gray-200) !important;
+    }
+
+    input,
+    textarea {
+        background-color: transparent;
+    }
+
+    header {
+        background-color: transparent !important;
+
+        nav {
+            background-color: var(--bs-dark) !important;
+
+            & a,
+            & i {
+                color: var(--bs-gray-200) !important;
+            }
+
+            .card-s {
+                border: none !important;
+                background-color: #0e0e0e !important;
+
+                & i {
+                    color: #007bff !important;
+                }
+
+                h6,
+                p {
+                    color: var(--bs-gray-200) !important;
+                }
+            }
+        }
+    }
+
+    #banner {
+        background-color: var(--bs-dark) !important;
+
+        .swiper {
+            p {
+                color: var(--bs-white) !important;
+            }
+        }
+    }
+
+    .my-name {
+        color: #007bff !important;
+    }
+
+    .meus-dados p {
+        color: #007bff !important;
+    }
+
+    #servicos {
+        background-color: var(--bs-gray-800) !important;
+
+        .card-s {
+            background-color: var(--bs-dark) !important;
+
+            h6,
+            p {
+                color: var(--bs-gray-200) !important;
+            }
+        }
+    }
+
+    .active {
+        color: #007bff !important;
+    }
+}
